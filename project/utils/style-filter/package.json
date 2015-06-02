@@ -1,0 +1,10 @@
+{
+  "name": "style-filter",
+  "version": "1.0.0",
+  "description": "style-filter",
+  "main": "index.js",
+  "dependencies": {
+    "gulp-util": "^3.0.4",
+    "through2": "^0.6.5"
+  }
+}

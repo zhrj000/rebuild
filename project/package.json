@@ -1,0 +1,19 @@
+{
+  "name": "gulp-spr",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "git://github.com/gulpjs/gulp.git#4.0",
+    "gulp-compass": "^2.0.4",
+    "gulp-concat": "^2.5.2",
+    "gulp-html-replace": "^1.4.5",
+    "gulp-html-src": "^1.0.0",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-rimraf": "^0.1.1",
+    "gulp-tar": "^1.4.0",
+    "imagemin-jpegtran": "^4.1.0",
+    "imagemin-pngquant": "^4.1.0"
+  }
+}

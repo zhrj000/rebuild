@@ -1,0 +1,22 @@
+@charset "utf-8";
+@import "compass/utilities/sprites";    // 加载compass sprites模块
+
+//第一张雪碧图
+$ico-spacing: 8px;  // 配置所有sprite间距为5px，默认为0px
+$ico-layout: vertical;   // vertical/horizontal/diagonal/smart; 默认布局方式为vertical
+$ico-sprite-base-class: ".ico";
+$ico-sprite-dimensions: true;    // 启用自动设置sprite尺寸，默认值为false
+$disabled-ico-sprite-selectors: true;    // 默认为true
+@import "ico/*.png";                    // 导入ico目录下所有png图片
+@include all-ico-sprites;                // 输出所有的雪碧图css
+.ico { display: inline-block; vertical-align: middle; }   //附加样式
+
+//第二张雪碧图
+$cartn-spacing: 8px;  // 配置所有sprite间距为5px，默认为0px
+$cartn-layout: vertical;   // vertical/horizontal/diagonal/smart; 默认布局方式为vertical
+$cartn-sprite-base-class: ".cartn";
+$cartn-sprite-dimensions: true;    // 启用自动设置sprite尺寸，默认值为false
+$disabled-cartn-sprite-selectors: true;    // 默认为true
+@import "cartn/*.png";                    // 导入cartn目录下所有png图片
+@include all-cartn-sprites;                // 输出所有的雪碧图css
+.cartn { display: inline-block; vertical-align: middle; }   //附加样式

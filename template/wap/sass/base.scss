@@ -1,0 +1,15 @@
+
+/*reset*/
+html, body, p, ul, ol, input, figure, dl, dt, dd { margin: 0; padding: 0; border: 0; }
+ul, ol { list-style: none; }
+body { -webkit-font-smoothing: antialiased; font-family: Arial, DroidSansFallback, Helvetica, Tahoma, \5FAE\8F6F\96C5\9ED1, sans-serif, Sans; }
+h1, h2, h3, h4, h5, h6, p {margin: 0; font-weight: normal; }
+em, i { font-style: normal; }
+a { text-decoration: none; }
+a, button, button:active, input { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-tap-highlight-color: transparent; }
+
+
+/*fn*/
+.fn-clearfix:after { content: "\200B"; display: block; clear: both; height: 0; }
+.fn-clearfix { *zoom: 1; }
+.fn-tex-hid, .ico { font-size: 0; line-height: 0; overflow: hidden; }
