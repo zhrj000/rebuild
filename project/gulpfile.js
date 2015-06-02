@@ -18,7 +18,7 @@ var pxRem = require('./utils/px-rem');
 
 //配置信息
 var config = {
-	ftp: '\\\\192.168.16.189\\部门\\设计部\\需求设计稿\\Z张若君\\工作\\demo\\test',		//ftp地址
+	ftp: '',		//ftp地址
 	projInfo: {author: 'zhangruojun', design: 'huanshun'},		//开发信息
 	defaultFontSize: null, 		//px to rem default字体大小配置(16),不需要的话设置null
 	imgminPath: 'src/*/*.{jpg,png}', 		//需要压缩的图片路径配置
