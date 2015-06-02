@@ -1,3 +1,3 @@
 #!/bin/bash
-cp -r e:/service/project/* .;
-cp -r e:/service/template/$1/* src/;
+cp -r e:/rebuild/project/* .;
+cp -r e:/rebuild/template/$1/* src/;
