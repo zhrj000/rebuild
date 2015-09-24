@@ -69,6 +69,7 @@ gulp.task('css', function() {
 gulp.task('html', function() {
 	return gulp.src(['src/*.html', '!src/email*.html'])
 	.pipe(tplFilter({type: 'html', path: 'E:/service/moudle/index.html'}))
+	.pipe(gulp.dest('src/'))
     .pipe(gulp.dest('build/'));
 });
 
