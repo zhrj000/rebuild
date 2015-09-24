@@ -18,11 +18,11 @@ var tplFilter = require('./utils/tpl');
 //配置信息
 var config = {
     //活动页名称
-	name: '', 
+	name: '111', 
 	//产品
-	productor: '',
+	productor: '111',
 	//设计
-	designer: '',	
+	designer: '111',	
 	//ftp地址
 	ftp: '\\\\192.168.16.189\\部门\\设计部\\需求设计稿\\Z张若君\\工作\\2015\\月份\\',		
 	//重构
