@@ -36,7 +36,7 @@ var config = {
 //sass编译,compass合并雪碧图
 gulp.task('sass', function() {
 	return gulp.src('src/sass/*.scss')
-	.pipe(tplFilter('scss'))
+	.pipe(tplFilter({type: 'scss', path: 'E:/service/moudle/style.scss'}))
 	.pipe(gulp.dest('src/sass/'))
 	.pipe(compass({
 		config_file: 'src/config.rb',
@@ -68,6 +68,7 @@ gulp.task('css', function() {
 //html
 gulp.task('html', function() {
 	return gulp.src(['src/*.html', '!src/email*.html'])
+	.pipe(tplFilter({type: 'html', path: 'E:/service/moudle/index.html'}))
     .pipe(gulp.dest('build/'));
 });
 

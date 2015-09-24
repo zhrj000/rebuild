@@ -18,17 +18,16 @@ module.exports = function(options) {
 
 
 		var content = file.contents.toString();
+		var tpl = fs.readFileSync(options.path, 'utf-8');
 
-		var tpl, endexp, mainexp;
+		var endexp, mainexp;
 
-		switch(options) {
+		switch(options.type) {
 			case 'html': 
-				tpl = fs.readFileSync('E:/service/moudle/index.html', 'utf-8');
 				endexp = /<!--\s*end\s*-->/i;
 				mainexp = /(?:\<\!\-\-(.*)\-\-\>)([\s\S]*)/g;
 				break;
-			case 'scss':	
-				tpl = fs.readFileSync('E:/service/moudle/style.scss', 'utf-8');
+			case 'scss':
 				endexp = /\/\*\s*end\s*\*\//i;
 				mainexp = /(?:\/\*\s*(.*)\s*\*\/)([\s\S]*)/g;
 				break;

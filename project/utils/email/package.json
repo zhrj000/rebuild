@@ -1,8 +1,13 @@
 {
-  "name": "style-filter",
+  "name": "email",
   "version": "1.0.0",
-  "description": "style-filter",
+  "description": "email",
   "main": "index.js",
+  "author": {
+    "name": "zhangruojun",
+    "email": "zhrj000@163.com",
+    "url": "https://github.com/zhrj000"
+  },
   "dependencies": {
     "gulp-util": "^3.0.4",
     "through2": "^0.6.5"
