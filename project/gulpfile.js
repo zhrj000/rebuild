@@ -2,34 +2,42 @@
 // gulp npm 本地依赖包
 var gulp = require('gulp');
 var compass = require('gulp-compass');
-var concat = require('gulp-concat');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var imageminJpegtran = require('imagemin-jpegtran');
 var rimraf = require('gulp-rimraf');
 var rename = require('gulp-rename');
 var tar = require('gulp-tar');
-var ghtmlSrc = require('gulp-html-src');
-var htmlreplace = require('gulp-html-replace');
 
 //自定义模块
 var styleFilter = require('./utils/style-filter');
-var pxRem = require('./utils/px-rem');
+var email = require('./utils/email');
+var tplFilter = require('./utils/tpl');
+
 
 //配置信息
 var config = {
-	ftp: '',		//ftp地址
-	projInfo: {author: 'zhangruojun', design: 'huanshun'},		//开发信息
-	defaultFontSize: null, 		//px to rem default字体大小配置(16),不需要的话设置null
-	imgminPath: 'src/*/*.{jpg,png}', 		//需要压缩的图片路径配置
-	jsPath: ['src/*/*.js', '!src/utils/*.js']	//js文件路径
+    //活动页名称
+	name: '', 
+	//产品
+	productor: '',
+	//设计
+	designer: '',	
+	//ftp地址
+	ftp: '\\\\192.168.16.189\\部门\\设计部\\需求设计稿\\Z张若君\\工作\\2015\\月份\\',		
+	//重构
+	author: 'zhangruojun',
+	//审核人
+	checker: '文静',
+	//需要压缩的图片路径配置!src\/img\/[^-]*-s[a-z0-9]{10}\.png	
+	imgminPath: ['src/**/*.{jpg,png}', '!src/img/*/*.{jpg,png}', '!src\/img\/*-s*.png']		
 }
 
-
-
 //sass编译,compass合并雪碧图
-gulp.task('compass', function() {
+gulp.task('sass', function() {
 	return gulp.src('src/sass/*.scss')
+	.pipe(tplFilter('scss'))
+	.pipe(gulp.dest('src/sass/'))
 	.pipe(compass({
 		config_file: 'src/config.rb',
 		css: 'src/css',
@@ -37,13 +45,6 @@ gulp.task('compass', function() {
 		image: 'src/img'
 	}))
 });
-// compass生成的雪碧图文件px to rem
-gulp.task('pxrem', function() {
-	return gulp.src('src/css/spr.css')
-	.pipe(pxRem(config.defaultFontSize))
-	.pipe(gulp.dest('src/css/'))
-});
-gulp.task('sass', gulp.series('compass', 'pxrem'));
 
 
 
@@ -57,35 +58,31 @@ gulp.task('image', function () {
     .pipe(gulp.dest('build'));
 });
 
+//css
+gulp.task('css', function() {
+	return gulp.src('src/css/*.css')
+	.pipe(styleFilter(config))
+	.pipe(gulp.dest('build/css'));
+})
 
-
-//合并html引用到的css
-//如果有多个html页面，引用不同的样式要合并成不同的
-//需另外处理，这里默认都合并成一个
-gulp.task('copy-css', function() {
-    return gulp.src('src/index.html')
-    .pipe(ghtmlSrc({ presets: 'css'}))
-    .pipe(concat('style.css'))
-	.pipe(styleFilter(config.projInfo))
-	.pipe(gulp.dest('build/css'))
-});
-//替换html里面的link  
-//需要合并的link需要这样包住
-//<!-- build:css --><link **** /><!-- endbuild -->
-gulp.task('htmlrp', function() {
-	return gulp.src('src/*.html')
-    .pipe(htmlreplace({
-        css: 'css/style.css'
-    }))
+//html
+gulp.task('html', function() {
+	return gulp.src(['src/*.html', '!src/email*.html'])
     .pipe(gulp.dest('build/'));
 });
-gulp.task('html', gulp.series('copy-css', 'htmlrp'));
 
+gulp.task('email', function() {
+	return gulp.src('src/email.html')
+	.pipe(email(config)).pipe(rename({
+    	suffix: '-build'
+    }))
+    .pipe(gulp.dest('src/'));
+});
 
 
 //js文件暂不做处理
 gulp.task('js', function() {
-	return gulp.src(config.jsPath)
+	return gulp.src(['src/*/*.js', '!src/utils/*.js'])
 	.pipe(gulp.dest('build/'))
 });
 
@@ -124,16 +121,18 @@ gulp.task('watch', function() {
 
 	gulp.watch(config.imgminPath, gulp.series('image'));
 
-	gulp.watch(['src/*.html', 'src/css/*.css'], gulp.series('html'));
+	gulp.watch(['src/*.html'], gulp.series('html'));
+
+	gulp.watch(['src/css/*.css'], gulp.series('css'));
 
 });
 
 
 // gulp  4.0
-gulp.task('build', gulp.series('sass', gulp.parallel('image', 'html', 'js')));
+gulp.task('build', gulp.series('sass', gulp.parallel('image', 'html', 'css', 'js', 'email')));
 
 //上传到ftp
-gulp.task('prod', gulp.series('clean', 'build', 'ftp', 'tar')); 
+gulp.task('prod', gulp.series('clean', 'build', 'ftp', 'email', 'tar')); 
 
 
 

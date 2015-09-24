@@ -1,0 +1,101 @@
+
+
+$ico-spacing: 20px;
+$ico-layout: vertical;
+@import "ico/*.png";
+
+
+@import "_base.scss";
+@import "_mixin.scss";
+
+
+$minWidth: 1200px;	
+
+$shareColor: #fdfdfd;
+$shareHoverColor: #ffde00;
+$shareBackground: #225cab; 
+$shareBorderColor: #407fd5;
+
+
+
+.wrapper {
+	font-family: \5FAE\8F6F\96C5\9ED1;
+	min-width: $minWidth;
+}
+.main {
+	width: $minWidth;
+	margin: 0 auto;
+}
+.banner {
+	position: relative;
+}
+/*br*/
+
+.cm-share { 
+	position: absolute; 
+	top: 0; 
+	right: 0; 
+	width: 360px; 
+	height: 22px; 
+	padding: 7px 0; 
+	background-color: $shareBackground; 
+	font-size: 14px; 
+	color: $shareColor; 
+	text-align: center;
+	z-index: 10; 
+	.lable { 
+		position: relative;
+		_top: -3px; 
+	}
+	.colec { 
+		border-right: none; 
+	}
+	.wxin { 
+		position: relative; 
+		display: inline-block; 
+		&:hover {
+			background:none;
+			.code-img {
+				display: block;
+			}
+		}
+	}
+	.code-img { 
+		display: none; 
+		position: absolute; 
+		top: 29px; 
+		left: -40px; 
+		z-index: 999; 
+	}
+	.code-img, .code-img img { 
+		width: 174px; 
+		height: 168px; 
+	} 
+	a { 
+		display: inline-block; 
+		height: 16px; 
+		padding: 3px 8px; 
+		border-right: 1px solid $shareBorderColor; 
+		color: $shareColor; 
+		line-height: 16px; 
+		&:hover {
+			color: $shareHoverColor;
+		}
+	}
+	.ico { 
+		position: relative; 
+		top: -2px; 
+		*top: 0; 
+		margin-right: 5px; 
+	}
+	.wbo:hover .ico {
+		background-position: 0 0;
+	}
+	.wxin:hover .ico {
+		background-position: 0 0;
+	}
+	.colec:hover .ico {
+		background-position: 0 0;
+	}
+
+}

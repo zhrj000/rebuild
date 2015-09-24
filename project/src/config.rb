@@ -29,7 +29,7 @@ output_style = :compact   # nested :compact :expanded :compressed
 # Make a copy of sprites with a name that has no uniqueness of the hash.
 on_sprite_saved do |filename|
   if File.exists?(filename)
-    FileUtils.mv filename, filename.gsub(%r{-s[a-z0-9]{10}\.png$}, '.png')
+    FileUtils.cp filename, filename.gsub(%r{-s[a-z0-9]{10}\.png$}, '.png')
   end
 end
 

@@ -1,0 +1,25 @@
+
+
+$ico-spacing: 20px;
+$ico-layout: vertical;
+@import "ico/*.png";
+
+
+@import "_base.scss";
+@import "_mixin.scss";
+
+
+/*br*/
+html, body { 
+	width: 100%; 
+	height: 100%; 
+	box-sizing: border-box; 
+}
+.wrapper { 
+	position: relative; 
+	width: 100%; 
+}
+
+/*br*/
+/*dpi*/
+@import "_dpi.scss";

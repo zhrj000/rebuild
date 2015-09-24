@@ -1,0 +1,46 @@
+
+
+/* for 1080+ px width screen */
+@media only screen and (min-width: 1080px){
+	html, body { font-size: 51.67px; }
+}
+/* for 1080 px width screen */
+@media only screen and (max-width:1080px) {
+	html, body { font-size: 45px; }
+}
+/* for 800 px width screen */
+@media only screen and (max-width:800px) {
+	html, body { font-size:33px; }
+}
+/* for 720 px width screen */
+@media only screen and (max-width:720px) {
+	html, body { font-size:30px; }
+}
+/* for 640 px width screen */
+@media only screen and (max-width:640px) {
+	html, body { font-size: 27px; }
+}
+/* for 540 px width screen */
+@media only screen and (max-width:540px) {
+	html, body { font-size: 22.5px; }
+} 
+/* for 480 px width screen */
+@media only screen and (max-width:480px) {
+	html, body { font-size: 20px; }
+}
+/* for 450 px width screen */
+@media only screen and (max-width:450px) {
+	html, body { font-size: 18.9px; }
+}
+/* for 414 px width screen */
+@media only screen and (max-width:414px) {
+	html, body { font-size: 17.25px; }
+}
+/* for 375 px width screen */
+@media only screen and (max-width:375px) {
+	html, body { font-size: 15.625px; }
+}
+/* for 320 px width screen */
+@media only screen and (max-width:320px) {
+	html, body { font-size: 13.5px; }
+}

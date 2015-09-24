@@ -1,0 +1,14 @@
+
+
+$ico-spacing: 20px;
+$ico-layout: vertical;
+@import "ico/*.png";
+
+
+@import "_base.scss";
+@import "_mixin.scss";
+
+
+.wrapper {
+	font-family: \5FAE\8F6F\96C5\9ED1;
+}

@@ -1,0 +1,96 @@
+/*cjtpl*/
+.lottwp {
+	position: relative;
+}
+.lott-btn {
+	position: absolute;
+	top: 205px;
+	left: 205px;
+	@include sprite($oth-sprites, lot-btn);
+	font-size: 0;
+	line-height: 0;
+	overflow: hidden;
+}
+.lott-list {
+	li {
+		position: relative;
+		float: left;
+		width: 186px;
+		height: 186px;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		border: 3px solid #381857;
+		border-radius: 14px;
+		background-color: #552b7f;
+	}
+	.on {
+		border-color: #9f5ee2;
+		box-shadow: 0 0 10px rgba(122, 63, 183, .7);
+	}
+	.fix {
+		margin-right: 212px;
+	}
+}
+.lott-pic {
+	width: 186px;
+	height: 140px;
+	img {
+		width: 100%;
+	}
+}
+.lott-name {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 46px;
+	border-bottom-left-radius: 14px;
+	border-bottom-right-radius: 14px;
+	background-color: #4b2471;
+	font-size: 16px;
+	line-height: 46px;
+	color: #fff;
+	text-align: center;
+}
+/*end*/
+
+
+/*poptpl*/
+.pop-lay { 
+	position: fixed;  
+	_position: absolute; 
+	top: 0 ; 
+	left: 0; 
+	width: 100%; 
+	height: 100%; 
+	background-color: #000; 
+	opacity: 0.5; 
+	filter:alpha(opacity=50); 
+	z-index: 1001; 
+}
+.pop-box { 
+	position: fixed; 
+	_position: absolute; 
+	top: 50%; 
+	left: 50%; 
+	width: 400px; 
+	height: 400px;  
+	margin-left: -200px; 
+	margin-top: -200px; 
+	border-radius: 10px; 
+	background-color: #fff;  
+	z-index: 1002; 
+}
+.pop-b-close { 
+	display: block; 
+	position: absolute; 
+	top: 15px; 
+	right: 18px; 
+	width: 20px; 
+	height: 20px; 
+	background: url(../img/pop-close.png) no-repeat center center; 
+	font-size: 0; 
+	line-height: 0; 
+	overflow: hidden; 
+}
+/*end*/

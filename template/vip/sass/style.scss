@@ -1,0 +1,70 @@
+
+
+$ico-spacing: 20px;
+$ico-layout: vertical;
+@import "ico/*.png";
+
+
+@import "_base.scss";
+@import "_mixin.scss";
+
+
+/*br*/
+.wrapper {
+	padding-top: 52px;
+	_padding-top: 0;
+	min-width: 1190px;
+	font-family: \5FAE\8F6F\96C5\9ED1;
+}
+.main { 
+	position: relative;
+	width: 960px;
+	margin: 0 auto;
+}
+
+/*pop*/
+.pop-lay { 
+	position: fixed;  
+	_position: absolute; 
+	top: 0 ; 
+	left: 0; 
+	width: 100%; 
+	height: 100%; 
+	background-color: #000; 
+	opacity: 0.5; 
+	filter:alpha(opacity=50); 
+	z-index: 1001; 
+}
+.pop-box { 
+	position: fixed; 
+	_position: absolute; 
+	top: 50%; 
+	left: 50%; 
+	width: 490px;
+	margin-left: -245px; 
+	margin-top: -245px; 
+	background-color: #fff;  
+	z-index: 1002; 
+}
+.pop-b-close { 
+	display: block; 
+	position: absolute; 
+	top: 10px; 
+	right: 10px; 
+	@include sprite($ico-sprites, close); 
+	font-size: 0; 
+	line-height: 0; 
+	overflow: hidden; 
+}
+.pop-p-hd { 
+	height: 40px;
+	padding: 0 10px;
+	background-color: #346ddf;
+	line-height: 40px;
+	color: #fff;
+}
+.pop-p-bd { 
+	border: 3px solid #346ddf;
+	border-top: none;
+	color: #3b3b3b;
+}

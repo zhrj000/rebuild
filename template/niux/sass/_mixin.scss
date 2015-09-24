@@ -1,0 +1,39 @@
+
+@import "compass/utilities/sprites"; 
+@import "compass/css3/background-size";
+@import "_config.scss";
+
+@function rem($px){					//$px为需要转换的字号
+  @if($needRem == 1) {
+    @return ($px / $defaultFontSize) * 100 / 100 * 1rem;
+  } 
+  @else {
+    @return $px;
+  } 
+}
+
+
+@mixin sprite-position($map,$name){
+  $xpos-pre: nth(sprite-position($map, $name), 1);
+  $ypos-pre: nth(sprite-position($map, $name), 2);
+  @if ($ypos-pre != 0) {
+    $ypos-pre: rem($ypos-pre);
+  }
+  @if ($xpos-pre != 0) {
+    $xpos-pre: rem($xpos-pre);
+  } 
+  background-position: $xpos-pre $ypos-pre; 
+}
+
+@mixin sprite($map, $name){
+  $height-pre: image-height(sprite-file($map, $name));
+  $width-pre: image-width(sprite-file($map, $name));
+  width: rem($width-pre);
+  height: rem($height-pre);
+  background-image: sprite-url($map);
+  background-repeat: no-repeat;
+  @include sprite-position($map,$name);
+  $sprite-width: image-width(sprite-path($map));
+  $sprite-height: image-height(sprite-path($map));
+  background-size: rem($sprite-width) rem($sprite-height);
+}

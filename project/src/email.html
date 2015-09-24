@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>邮件</title>
+	<style>
+	/*reset*/
+	body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{-webkit-text-size-adjust: none;margin:0;padding:0;}body,button,input,select,textarea{font:12px/1.5 tahoma,arial,\5b8b\4f53,sans-serif;}h1,h2,h3,h4,h5,h6{font-size:100%;}address,cite,dfn,em,var{font-style:normal;}code,kbd,pre,samp{font-family:courier new,courier,monospace;}small{font-size:12px;}ul,ol{list-style:none;}a{text-decoration:none;outline:0 none}a:hover{text-decoration:underline;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}legend{color:#000;}fieldset,img{border:0;}button,input,select,textarea{font-size:100%;resize: none;}table{border-collapse:collapse;border-spacing:0;}
+	/*reset end*/
+	html, body {
+		font-family: \5FAE\8F6F\96C5\9ED1;
+		font-size: 14px;
+	}
+	.red {
+		color: #FF0000;
+	}
+	.panel {
+		margin-top: 10px;
+	}
+	.pan-hd {
+		padding: 20px 0;
+	}
+	.calltex {
+		color: #333399;
+		padding-bottom: 20px;
+	}
+	.texwrap {
+		padding-left: 34px;
+	}
+	.line {
+		padding: 20px 0;
+	}
+	.mod {
+		padding-bottom: 20px;
+	}
+	.subtitl {
+		font-size: 13px;
+		color: #0000FF;
+	}
+	.subtex {
+		padding-left: 10px;
+	}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="panel">
+			<div class="pan-hd">
+				<h2>1.ALL</h2>
+			</div>
+			<div class="pan-bd">
+				<p class="calltex">Dear all:</p>
+				<div class="texwrap">
+					<div>
+						<p>{name}  重构已经完成，请  {checker}  评定。</p>
+						<p>请 {productor}  等  {checker}  评定后再安排进入开发流程，页面有问题请随时联系我，谢谢！</p>	
+					</div>
+					<p class="line">===================================================</p>
+					<div class="mod">
+						<p class="subtitl">○ 需求描述</p>
+						<p class="subtex">{name}</p>
+					</div>
+					<div class="mod">
+						<p class="subtitl">○ 需求完成地址</p>
+						<p class="subtex">{ftp}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel">
+			<div class="pan-hd">
+				<h2>2.PC端</h2>
+			</div>
+			<div class="pan-bd">
+				<div class="mod">
+					<p class="subtitl">○ 需求名</p>
+					<p class="subtex">{name}</p>
+				</div>
+				<div class="mod">
+					<p class="subtitl">○ 需求完成地址</p>
+					<p class="subtex">{ftp}</p>
+				</div>
+				<div class="mod">
+					<p class="subtitl">○ 需求关键字搜索引擎优化</p>
+					<p class="subtex">截图</p>
+				</div>
+				<div class="mod">
+					<p class="subtitl">○ 高级浏览器应用，用户体验提升（IE 6 7 8 9 不支持该HTML5新语言及css3新属性 ）</p>
+					<p class="subtex">截图</p>
+				</div>
+				<div class="mod">
+					<p class="subtitl">○ 需求图片文件压缩优化</p>
+					<p class="subtex">页面已合并<strong class="red">  {images}  张 图片</strong>  以减少请求数来提高页面加载性能</p>
+				</div>
+			</div>
+		</div>	
+
+		<div class="panel">
+			<div class="pan-hd">
+				<h2>3.移动端</h2>
+			</div>
+			<div class="pan-bd">
+				<div class="mod">
+					<p class="subtitl">○ 需求名</p>
+					<p class="subtex">{name}</p>
+				</div>
+				<div class="mod">
+					<p class="subtitl">○ 需求完成地址</p>
+					<p class="subtex">{ftp}</p>
+				</div>
+				<div class="mod">
+					<p class="subtitl">○ 需求图片文件压缩优化</p>
+					<p class="subtex">页面已合并<strong class="red">  {images}  张 图片</strong>  以减少请求数来提高页面加载性能</p>
+				</div>
+				<div class="mod">
+					<p class="subtitl">○ 用户体验提升</p>
+					<p class="subtex">截图</p>
+				</div>
+				<div class="mod">
+					<p class="subtitl">○ 手机端响应式页面兼容性测试</p>
+					<p class="subtex">本地页面通过各主流手机（iphone系列和安卓系列）分辨率测试</p>
+				</div>
+			</div>
+		</div>	
+	</div>
+</body>
+</html>

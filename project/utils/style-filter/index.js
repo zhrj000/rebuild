@@ -18,6 +18,9 @@ module.exports = function(options) {
 	
 		var content = file.contents.toString();
 		var newContent = file.contents.toString().replace(/\n\s*\r/g, '');
+		newContent = newContent.replace(/\/\*br\*\//gi, '');
+
+
 		//合并相同选择器样式, 去掉多余空行
 		// var cssObj = {};
 		// content.replace(/(.+)\{(.+)\}/g, function($0, $1, $2) {
@@ -45,7 +48,7 @@ module.exports = function(options) {
 	    var date = new Date();
 	    var othInfo = '/*\n'
 			+ ' * @author: ' + options.author + ';\n'
-			+ ' * @design: ' + options.design + ';\n'
+			+ ' * @design: ' + options.designer + ';\n'
 			+ ' * @update: ' + date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ';\n'
 			+ ' */\n\n';
 
